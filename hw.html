@@ -1,0 +1,179 @@
+"use strict";
+
+// 1. Define a function max() that takes two numbers as arguments and returns the largest of them.
+function max(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else {
+        return num2;
+
+    }
+}
+
+// Example usage:
+console.log(max(3, 12)); // Output: 12
+
+// 2. Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+function maxOfThree(num1, num2, num3) {
+    return Math.max(num1, num2, num3);
+}
+
+// Example usage:
+
+console.log(maxOfThree(8, 2, 12)); // Output: 12
+
+
+
+
+// 3. Write a function isVowel() that takes a character and returns true if it is a vowel, false otherwise.
+function isVowel(char) {
+    // Convert the character to lowercase to handle both uppercase and lowercase vowels
+    char = char.toLowerCase();
+
+
+    // Check if the character is a vowel
+    return ['a', 'e', 'i', 'o', 'u'].includes(char);
+}
+
+// Example usage:
+console.log(isVowel('a')); // Output: true
+console.log(isVowel('c')); // Output: false
+
+
+
+// 4. Define a function sum() that sums all the numbers in the given array of numbers.
+function sum(numbers) {
+    let result = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        result += numbers[i];
+    }
+    return result;
+}
+
+// Example usage:
+console.log(sum([1, 2, 13])); // Output: 16
+
+      
+// 4. Define a function multiply() that multiplies all the numbers in the given array of numbers.
+function multiply(numbers) {
+    let result = 1;
+    for (let i = 0; i < numbers.length; i++) {
+        result *= numbers[i];
+    }
+    return result;
+}
+
+// Example usage:
+console.log(multiply([1, 2, 3, 4])); // Output: 24
+
+      
+// 5. Define a function reverse() that computes the reversal of a string.
+function reverse(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+
+// Example usage:
+console.log(reverse("jag testar")); // Output: "ratset gaj"
+
+// 6. Write a function findLengestWordLength() that takes an array of words and returns the length of the longest one.
+function findLengestWordLength(words) {
+    let maxLength = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > maxLength) {
+            maxLength = words[i].length;
+        }
+    }
+
+
+      
+    return maxLength;
+}
+
+      
+// Example usage:
+console.log(findLengestWordLength(["applefruits", "banana", "cherry"])); // Output: 11
+
+// 7. Write a function filterLengWords() that takes an array of words and an integer i and returns a new array containing only those words that were longer than i characters.
+function filterLengWords(words, i) {
+    let filteredWords = [];
+    for (let j = 0; j < words.length; j++) {
+        if (words[j].length > i) {
+            filteredWords.push(words[j]);
+        }
+    }
+
+      
+    return filteredWords;
+}
+// Example usage:
+console.log(filterLengWords(["apple", "banana", "cherry"], 5)); // Output: ["banana", "cherry"]
+
+
+// 8. Write a function named computeSumOfSquares that takes as input, an array of numbers and calculates and returns the sum of the squares of each number in the input array.
+function computeSumOfSquares(numbers) {
+    let sumOfSquares = 0;
+    for (let k = 0; k < numbers.length; k++) {
+        sumOfSquares += numbers[k] ** 2;
+    }
+    return sumOfSquares;
+}
+
+
+
+
+// 8. Write a function named printOddNumbersOnly that takes as input, an array of numbers and it finds and prints only the numbers which are odd.
+function printOddNumbersOnly(numbers) {
+    numbers.filter(num => num % 2 !== 0).forEach(oddNum => console.log(oddNum));
+}
+
+      
+// Example usage:
+printOddNumbersOnly([1, 2, 3, 4, 7]); // Output: 1, 3, 7
+
+// 10. Write a function named computeSumOfSquaresOfEvensOnly that takes as input, an array of integral numbers and calculates and returns the sum of the squares of only the even numbers in the input array.
+function computeSumOfSquaresOfEvensOnly(numbers) {
+    return numbers.filter(num => num % 2 === 0).reduce((acc, evenNum) => acc + evenNum ** 2, 0);
+}
+
+      
+// Example usage:
+console.log(computeSumOfSquaresOfEvensOnly([1, 2, 3, 4, 5])); // Output: 20
+
+
+
+
+
+
+// 11. Using the Array.reduce(…) function, re-implement your functions, sum(…) and multiply(…) without using Imperative programming.
+function sum(numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+function multiply(numbers) {
+    return numbers.reduce((acc, num) => acc * num, 1);
+}
+
+      
+// Example usage:
+console.log(sum([1, 2, 3, 4]));      // Output: 10
+console.log(multiply([1, 2, 3, 4])); // Output: 24
+
+// 12. Write a function named printFc that takes as input, a given length, n, and any two starting numbers a and c, and it prints-out the Fibonacci sequence.
+function printFc(n, a, c) {
+    let sequence = [a, c];
+    for (let i = 2; i < n; i++) {
+        sequence[i] = sequence[i - 1] + sequence[i - 2];
+    }
+    console.log(sequence.join(', '));
+}
+// Example usage:
+printFc(1, 0, 1); // Output: "0"
+printFc(2, 0, 1); // Output: "0, 1"
+printFc(3, 0, 1); // Output: "0, 1, 1"// ... and so on
+
+      
+// Example usage:
+console.log(computeSumOfSquares([1, 2, 3])); // Output: 14
